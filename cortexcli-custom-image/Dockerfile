@@ -21,7 +21,7 @@ COPY custom-ca-bundle.crt /usr/local/share/ca-certificates/custom-ca-bundle.crt
 RUN update-ca-certificates
 
 # --- Stage 2: Final Cortexcli Image ---
-FROM distributions.traps.paloaltonetworks.com/cli-docker/$TOKEN/method:arm64-0.13.0
+FROM distributions.traps.paloaltonetworks.com/cli-docker/$TOKEN/method:amd64-0.13.0
 
 # Copy the generated, updated certificate bundle from the 'cert-builder' stage.
 # This ensures only the final, processed bundle is included, not the tools used to create it.
